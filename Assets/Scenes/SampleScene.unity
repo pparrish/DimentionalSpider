@@ -220,6 +220,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1085353648}
+    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: leftLimit
+      value: 
+      objectReference: {fileID: 866553926}
+    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: rightLimit
+      value: 
+      objectReference: {fileID: 461454278}
+    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: acceptableDistanceToAnimateLimits
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2229540103911536802, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3266,33 +3282,6 @@ Transform:
   m_Father: {fileID: 465937071}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1755438574 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2229540103911536808, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-  m_PrefabInstance: {fileID: 133983669}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1755438575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755438574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2e76c9d442a49cb9bb86a6269aed28c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spiderControlEventBus: {fileID: 11400000, guid: faa0e22809ea44f46a3e4eaf6aba71d4, type: 2}
-  leftLimit: {fileID: 866553926}
-  rightLimit: {fileID: 461454278}
-  player: {fileID: 1085353648}
-  isTouchingTheRightLimit: 0
-  isTouchingTheLeftLimit: 0
-  centerRatio: 0.5
-  onCheckDistanceToLimits:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1795366330
 GameObject:
   m_ObjectHideFlags: 0
