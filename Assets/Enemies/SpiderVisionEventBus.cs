@@ -12,16 +12,20 @@ namespace Enemies
         
         private Rigidbody2D _rigidbody;
 
+        public void UpdateDistanceToPlayer(Vector2 distance)
+        {
+            DistanceToPlayer = distance;
+        }
+
         public void SetRigidbody()
         {
             _rigidbody = spider.GetComponent<Rigidbody2D>();
         }
 
-        public Vector2 DistanceToPlayer {
-            get {
-            Vector2 playerPosition = player.transform.position;
-            return  playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody);
-            } 
+        public Vector2 DistanceToPlayer
+        {
+            get;
+            private set;
         }
 
         private float DistanceXToLimit(Vector2 limit)

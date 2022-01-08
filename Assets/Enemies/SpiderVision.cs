@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using System;
+using Common;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,12 +13,18 @@ namespace Enemies
         
         public Transform player;
         
+        private void LateUpdate()
+        {
+            Vector2 playerPosition = player.transform.position;
+            spiderVisionEventBus.UpdateDistanceToPlayer(playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody));
+        }
 
+        private Rigidbody2D _rigidbody;
         public void Start()
         {
             spiderVisionEventBus.player = player;
             spiderVisionEventBus.spider = transform;
-            
+            _rigidbody = GetComponent<Rigidbody2D>();
             spiderVisionEventBus.SetRigidbody();
             spiderControlEventBus.Setup(this, GetComponent<Statistics>());
         }
