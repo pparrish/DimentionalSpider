@@ -22,7 +22,7 @@ namespace AI
             _mode = mode;
         }
         
-        public ComposedAttackPattern(SpiderControlEventBus controller, SpiderVision vision, float duration = float.PositiveInfinity, Mode mode = Mode.Timer) : base(controller, vision, duration)
+        public ComposedAttackPattern(SpiderControlEventBus controller, SpiderVisionEventBus vision, float duration = float.PositiveInfinity, Mode mode = Mode.Timer) : base(controller, vision, duration)
         {
             _mode = mode;
         }

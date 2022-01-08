@@ -8,50 +8,41 @@ namespace Enemies
     public class SpiderVision : MonoBehaviour
     {
         [SerializeField] private SpiderControlEventBus spiderControlEventBus;
-
-        public Transform leftLimit;
-        public Transform rightLimit;
+        [SerializeField] private SpiderVisionEventBus spiderVisionEventBus;
+        
         public Transform player;
         
-        public bool isTouchingTheRightLimit;
-        public bool isTouchingTheLeftLimit;
-        public float centerRatio;
 
-        private Rigidbody2D _rigidbody;
-        
         public void Start()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
+            spiderVisionEventBus.player = player;
+            spiderVisionEventBus.spider = transform;
+            
+            spiderVisionEventBus.SetRigidbody();
             spiderControlEventBus.Setup(this, GetComponent<Statistics>());
         }
-
-        private Vector2 DistanceToPoint(Vector2 point)
-        {
-            var closestPoint = Physics2D.ClosestPoint(point, _rigidbody);
-            return point - closestPoint;
-        }
-
+        
         private void OnCollisionStay2D(Collision2D other)
         {
-            if (other.transform == leftLimit)
+            if (other.transform == spiderVisionEventBus.leftLimit)
             {
-                isTouchingTheLeftLimit = true;
+                spiderVisionEventBus.IsTouchingTheLeftLimit = true;
             }
-            if (other.transform == rightLimit)
+            if (other.transform == spiderVisionEventBus.rightLimit)
             {
-                isTouchingTheRightLimit = true;
+                spiderVisionEventBus.IsTouchingTheRightLimit = true;
             }
         }
 
         private void OnCollisionExit2D(Collision2D other)
         {
-            if (other.transform == leftLimit)
+            if (other.transform == spiderVisionEventBus.leftLimit)
             {
-                isTouchingTheLeftLimit = false;
+                spiderVisionEventBus.IsTouchingTheLeftLimit = false;
             }
-            if (other.transform == rightLimit)
+            if (other.transform == spiderVisionEventBus.rightLimit)
             {
-                isTouchingTheRightLimit = false;
+                spiderVisionEventBus.IsTouchingTheRightLimit = false;
             }
         }
 
@@ -61,9 +52,9 @@ namespace Enemies
             
             onCheckDistanceToLimits.Invoke(new SpiderVisionDto()
             {
-                DistanceToLeftLimit = Mathf.Abs(DistanceToPoint(leftLimit.transform.position).x),
-                DistanceToRightLimit = Mathf.Abs(DistanceToPoint(rightLimit.transform.position).x),
-                Velocity = _rigidbody.velocity.x
+                DistanceToLeftLimit = spiderVisionEventBus.DistanceToLeftLimit,
+                DistanceToRightLimit = spiderVisionEventBus.DistanceToRightLimit,
+                Velocity = spiderVisionEventBus.Velocity.x
             });
         }
 
@@ -73,11 +64,5 @@ namespace Enemies
             public float Velocity { get; set; }
             public float DistanceToRightLimit { get; set; }
         }
-        
-        public Vector2 DistanceToPlayer => DistanceToPoint(player.position);
-        private float ArenaCenter => (rightLimit.position.x - leftLimit.position.x) * 0.5f;
-        private float PositionInArena => transform.position.x - leftLimit.position.x;
-        public bool IsOnCenter => PositionInArena >= ArenaCenter - centerRatio && PositionInArena <= ArenaCenter + centerRatio;
-        public float DistanceToCenter => PositionInArena - ArenaCenter;
     }
 }

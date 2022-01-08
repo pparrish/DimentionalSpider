@@ -5,13 +5,13 @@ namespace AI
     public abstract class BaseAttackPattern : IAttackPattern
     {
         protected readonly SpiderControlEventBus Controller;
-        protected readonly SpiderVision Vision;
+        protected readonly SpiderVisionEventBus Vision;
 
         protected BaseAttackPattern(SpiderControlEventBus controller)
         {
             Controller = controller;
         }
-        protected BaseAttackPattern(SpiderControlEventBus controller, SpiderVision vision)
+        protected BaseAttackPattern(SpiderControlEventBus controller, SpiderVisionEventBus vision)
         {
             Controller = controller;
             Vision = vision;

@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 461454278}
+    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: spiderVisionEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
     - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: acceptableDistanceToAnimateLimits
       value: 3
@@ -279,6 +283,10 @@ PrefabInstance:
     - target: {fileID: 2229540103911536802, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229540103911536805, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: maxLife
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2229540103911536808, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_Name
@@ -881,6 +889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 465937071}
+  - component: {fileID: 465937072}
   m_Layer: 0
   m_Name: Limits
   m_TagString: Untagged
@@ -908,6 +917,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465937072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465937070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805fa886d15b179468390292522d8fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spiderVisionEventBus: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
+  leftLimit: {fileID: 866553926}
+  rightLimit: {fileID: 461454278}
 --- !u!1 &565296502
 GameObject:
   m_ObjectHideFlags: 0

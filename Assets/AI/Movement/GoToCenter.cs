@@ -1,15 +1,15 @@
 ﻿using Enemies;
 using UnityEngine;
 
-namespace AI
+namespace AI.Movement
 {
     public class GoToCenter : IAttackPattern
     {
         private readonly SpiderControlEventBus _controller;
-        private readonly SpiderVision _vision;
+        private readonly SpiderVisionEventBus _vision;
         private bool _isOnCenter;
         
-        public GoToCenter(SpiderControlEventBus controller, SpiderVision vision )
+        public GoToCenter(SpiderControlEventBus controller, SpiderVisionEventBus vision )
         {
             _controller = controller;
             _vision = vision;

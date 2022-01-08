@@ -5,7 +5,7 @@ namespace AI.Movement
 {
     public class AlignWithPlayer : DistanceToPlayer
     {
-        public AlignWithPlayer(SpiderControlEventBus controller, SpiderVision vision, float duration = float.PositiveInfinity, float acceptableDistance = 0) : base(controller, vision, acceptableDistance, duration)
+        public AlignWithPlayer(SpiderControlEventBus controller, SpiderVisionEventBus vision, float duration = float.PositiveInfinity, float acceptableDistance = 0) : base(controller, vision, acceptableDistance, duration)
         {
         }
 

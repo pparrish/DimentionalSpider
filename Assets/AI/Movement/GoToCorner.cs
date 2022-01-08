@@ -1,13 +1,13 @@
-﻿using AI;
+﻿using Enemies;
 using UnityEngine;
 
-namespace Enemies
+namespace AI.Movement
 {
     public class GoToCorner : IAttackPattern
     {
         private bool _limitTouched;
         private readonly SpiderControlEventBus _controller;
-        private readonly SpiderVision _vision;
+        private readonly SpiderVisionEventBus _vision;
         private readonly Corner _corner;
 
         public enum Corner
@@ -16,7 +16,7 @@ namespace Enemies
             Left
         }
         
-        public GoToCorner(SpiderControlEventBus controller, SpiderVision vision, Corner corner = Corner.Right )
+        public GoToCorner(SpiderControlEventBus controller, SpiderVisionEventBus vision, Corner corner = Corner.Right )
         {
             _controller = controller;
             _vision = vision;
@@ -38,7 +38,7 @@ namespace Enemies
             if(_limitTouched) return;
             if (_corner == Corner.Right)
             {
-                if (_vision.isTouchingTheRightLimit)
+                if (_vision.IsTouchingTheRightLimit)
                 {
                     _limitTouched = true;
                 }
@@ -48,7 +48,7 @@ namespace Enemies
 
             if (_corner == Corner.Left)
             {
-                if (_vision.isTouchingTheLeftLimit)
+                if (_vision.IsTouchingTheLeftLimit)
                 {
                     _limitTouched = true;
                 }

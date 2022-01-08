@@ -7,7 +7,7 @@ namespace AI
     public class AttackPatterns
     {
         public SpiderControlEventBus Controller;
-        public SpiderVision Vision;
+        public SpiderVisionEventBus Vision;
 
         public IAttackPattern FollowAndAttack(int weapon, float duration)
         {

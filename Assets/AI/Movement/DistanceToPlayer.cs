@@ -7,7 +7,7 @@ namespace AI.Movement
     {
         protected readonly float AcceptableDistance;
         
-        public DistanceToPlayer(SpiderControlEventBus controller, SpiderVision vision,
+        public DistanceToPlayer(SpiderControlEventBus controller, SpiderVisionEventBus vision,
             float acceptableDistance = 10f, float duration = float.PositiveInfinity) : base(controller, vision, duration)
         {
             AcceptableDistance = acceptableDistance;

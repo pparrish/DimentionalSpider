@@ -8,7 +8,7 @@ namespace AI
         protected float StartTimestamp;
         private readonly float _duration;
 
-        protected TimeOutPattern(SpiderControlEventBus controller, SpiderVision vision, float duration = float.PositiveInfinity) : base(controller, vision)
+        protected TimeOutPattern(SpiderControlEventBus controller, SpiderVisionEventBus vision, float duration = float.PositiveInfinity) : base(controller, vision)
         {
             _duration = duration;
         }

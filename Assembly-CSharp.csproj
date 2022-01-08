@@ -66,14 +66,18 @@
      <Compile Include="Assets\Common\Interfaces\IShipMovementStatistics.cs" />
      <Compile Include="Assets\Weapons\WeaponBase.cs" />
      <Compile Include="Assets\Weapons\WeaponEventBus.cs" />
+     <Compile Include="Assets\Enemies\SpiderVisionEventBus.cs" />
+     <Compile Include="Assets\AddLimitsToSpiderVision.cs" />
      <Compile Include="Assets\UI\ShipUI.cs" />
      <Compile Include="Assets\AI\AttackPatternsSequence.cs" />
      <Compile Include="Assets\DetachPlayAndDestroy.cs" />
+     <Compile Include="Assets\Enemies\SpiderControlEventBus.cs" />
      <Compile Include="Assets\Common\MovementManager.cs" />
      <Compile Include="Assets\Common\LifeEntityChild.cs" />
      <Compile Include="Assets\AI\Movement\AlignWithPlayer.cs" />
      <Compile Include="Assets\UI\CreateShipsUI.cs" />
      <Compile Include="Assets\Common\LifeEntity.cs" />
+     <Compile Include="Assets\Player\PayerControlEventBus.cs" />
      <Compile Include="Assets\Weapons\WeaponModificator.cs" />
      <Compile Include="Assets\Player\ShipControls.cs" />
      <Compile Include="Assets\Common\MovementDto.cs" />
@@ -86,6 +90,7 @@
      <Compile Include="Assets\Common\ControlEventBus.cs" />
      <Compile Include="Assets\AI\ComposedAttackPattern.cs" />
      <Compile Include="Assets\Weapons\Interfaces\IBullet.cs" />
+     <Compile Include="Assets\Enemies\SpiderVision.cs" />
      <Compile Include="Assets\Common\InitGameManager.cs" />
      <Compile Include="Assets\GameData\GameData.cs" />
      <Compile Include="Assets\GameData\StatsData.cs" />
@@ -98,9 +103,6 @@
      <Compile Include="Assets\AI\BaseAttackPattern.cs" />
      <Compile Include="Assets\Bullets\Bullet.cs" />
      <Compile Include="Assets\Common\ShipMovementManager.cs" />
-     <Compile Include="Assets\Player\PayerControlEventBus.cs" />
-     <Compile Include="Assets\Enemies\SpiderControlEventBus.cs" />
-     <Compile Include="Assets\Enemies\SpiderVision.cs" />
      <None Include="Assets\DiverseSpace\Diverse Space Skybox Readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program files/Unity/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

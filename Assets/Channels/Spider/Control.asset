@@ -16,3 +16,4 @@ MonoBehaviour:
   buttonEventUpdateTime: 16
   supportWeaponEventBus: {fileID: 11400000, guid: b360f9feb7fd0cc44a850af6212255e1, type: 2}
   powerWeaponEventBus: {fileID: 11400000, guid: e0132b83aeb5871418079546c29e011a, type: 2}
+  SpiderVisionEventBus: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}

@@ -15,10 +15,13 @@ namespace Enemies
         
         [SerializeField] private WeaponEventBus powerWeaponEventBus;
         protected bool PowerShootActive;
+        
+        //vision
+        [SerializeField] private SpiderVisionEventBus SpiderVisionEventBus;
 
         // AI
         private readonly AttackPatternsSequence _attackPatterns = new AttackPatternsSequence();
-        
+
         private SpiderVision vision;
         private Statistics statistics;
         
@@ -31,7 +34,7 @@ namespace Enemies
             var fireBoost = new Boost( aStatistics, .5f);
             var fireBoostRemover = fireBoost.GetStatusEffectRemoverPattern();
             
-            var patterns = new AttackPatterns() {Controller = this, Vision = aVision};
+            var patterns = new AttackPatterns() {Controller = this, Vision = SpiderVisionEventBus};
             _attackPatterns
                 .AddPattern(patterns.FollowAndAttack(0, 5f))
                 .AddPattern(patterns.FollowAndAttack(1, 5f))
@@ -42,7 +45,7 @@ namespace Enemies
 
             LoopEvent += () =>
             {
-                if( vision && statistics) _attackPatterns.Execute();
+                if( vision && statistics && SpiderVisionEventBus) _attackPatterns.Execute();
             };
         }
         
