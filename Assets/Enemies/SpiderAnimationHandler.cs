@@ -1,0 +1,84 @@
+﻿using Common;
+using UnityEngine;
+
+namespace Enemies
+{
+    public class SpiderAnimationHandler : MonoBehaviour
+    {
+        private Animator _animator;
+        private static readonly int MainWeapon = Animator.StringToHash("MainWeapon");
+        private static readonly int MainWeaponShotDuration = Animator.StringToHash("MainWeaponShotDuration");
+        private static readonly int SupportWeapon = Animator.StringToHash("SupportWeapon");
+        private static readonly int SupportWeaponShotDuration = Animator.StringToHash("SupportWeaponShotDuration");
+         private static readonly int PowerWeapon = Animator.StringToHash("PowerWeapon");
+        private static readonly int PowerWeaponShotDuration = Animator.StringToHash("PowerWeaponShotDuration");
+        private static readonly int VelocityX = Animator.StringToHash("VelocityX");
+        private static readonly int LeftLimit = Animator.StringToHash("LeftLimit");
+        private static readonly int RightLimit = Animator.StringToHash("RightLimit");
+        private static readonly int DirectionX = Animator.StringToHash("DirectionX");
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+        }
+
+        public void MainWeaponAttack(float shotDuration)
+        {
+            _animator.SetTrigger(MainWeapon);
+            _animator.SetFloat(MainWeaponShotDuration, shotDuration);
+        }
+        
+        public void SupportWeaponAttack(float shotDuration)
+        {
+            _animator.SetTrigger(SupportWeapon);
+            _animator.SetFloat(SupportWeaponShotDuration, shotDuration);
+        }
+        
+        public void PowerWeaponAttack(float shotDuration)
+        {
+            _animator.SetTrigger(PowerWeapon);
+            _animator.SetFloat(PowerWeaponShotDuration, shotDuration);
+        }
+
+        public void OnMove(MovementDto movementDto)
+        {
+            Move(movementDto.Velocity, movementDto.Direction);
+        }
+
+        public void OnStop(MovementDto movementDto)
+        {
+            Move(Vector2.zero, Vector2.zero);
+        }
+
+        private void Move(Vector2 velocity, Vector2 direction)
+        {
+            _animator.SetFloat(DirectionX, direction.x);
+            _animator.SetFloat(VelocityX, 1 + Mathf.Abs(velocity.x));
+        }
+
+        [SerializeField]
+        private float acceptableDistanceToAnimateLimits;
+        
+        public void DistanceToLimits(SpiderVision.SpiderVisionDto dto)
+        {
+            if (dto.DistanceToLeftLimit < acceptableDistanceToAnimateLimits &&  dto.Velocity < 0f  )
+            {
+                _animator.SetFloat(LeftLimit, 1 + (1/ dto.DistanceToLeftLimit)  );
+            }
+            if (dto.DistanceToLeftLimit >= acceptableDistanceToAnimateLimits && dto.Velocity > 0f)
+            {
+                _animator.SetFloat(LeftLimit, -1);
+            }
+            
+            if (dto.DistanceToRightLimit < acceptableDistanceToAnimateLimits &&  dto.Velocity > 0f  )
+            {
+                _animator.SetFloat(RightLimit, 1 + (1/ dto.DistanceToRightLimit) );
+            }
+            
+            if (dto.DistanceToRightLimit >= acceptableDistanceToAnimateLimits && dto.Velocity < 0f)
+            {
+                _animator.SetFloat(RightLimit, -1);
+            }
+        }
+    }
+}
