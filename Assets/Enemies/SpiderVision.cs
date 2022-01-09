@@ -17,6 +17,12 @@ namespace Enemies
         {
             Vector2 playerPosition = player.transform.position;
             spiderVisionEventBus.UpdateDistanceToPlayer(playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody));
+            onCheckDistanceToLimits.Invoke(new SpiderVisionDto()
+            {
+                DistanceToLeftLimit = spiderVisionEventBus.DistanceToLeftLimit,
+                DistanceToRightLimit = spiderVisionEventBus.DistanceToRightLimit,
+                Velocity = spiderVisionEventBus.Velocity.x
+            });
         }
 
         private Rigidbody2D _rigidbody;
@@ -54,16 +60,6 @@ namespace Enemies
         }
 
         public UnityEvent<SpiderVisionDto> onCheckDistanceToLimits = new UnityEvent<SpiderVisionDto>();
-        public void Update()
-        {
-            
-            onCheckDistanceToLimits.Invoke(new SpiderVisionDto()
-            {
-                DistanceToLeftLimit = spiderVisionEventBus.DistanceToLeftLimit,
-                DistanceToRightLimit = spiderVisionEventBus.DistanceToRightLimit,
-                Velocity = spiderVisionEventBus.Velocity.x
-            });
-        }
 
         public class SpiderVisionDto
         {
