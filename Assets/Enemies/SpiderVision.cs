@@ -8,12 +8,10 @@ namespace Enemies
     {
         [SerializeField] private SpiderControlEventBus spiderControlEventBus;
         [SerializeField] private SpiderVisionEventBus spiderVisionEventBus;
-        
-        public Transform player;
-        
+
         private void LateUpdate()
         {
-            Vector2 playerPosition = spiderVisionEventBus.Player.transform.position;
+            Vector2 playerPosition = spiderVisionEventBus.player.transform.position;
             spiderVisionEventBus.UpdateDistanceToPlayer(playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody));
         }
 

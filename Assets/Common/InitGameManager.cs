@@ -25,7 +25,7 @@ namespace Common
         {
             CreateSpider();
             var player = CreatePlayerShip();
-            spiderVisionEventBus.Player = player;
+            spiderVisionEventBus.player = player;
         }
         
         // Spider Creator maybe

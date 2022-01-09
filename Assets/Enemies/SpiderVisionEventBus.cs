@@ -12,7 +12,7 @@ namespace Enemies
         private Rigidbody2D _rigidbody;
 
         public float centerRatio;
-        public GameObject Player;
+        public GameObject player;
 
         public void UpdateDistanceToPlayer(Vector2 distance)
         {
