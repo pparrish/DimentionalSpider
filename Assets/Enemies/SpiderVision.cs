@@ -13,7 +13,7 @@ namespace Enemies
         
         private void LateUpdate()
         {
-            Vector2 playerPosition = player.transform.position;
+            Vector2 playerPosition = spiderVisionEventBus.Player.transform.position;
             spiderVisionEventBus.UpdateDistanceToPlayer(playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody));
         }
 

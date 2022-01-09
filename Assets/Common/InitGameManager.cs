@@ -1,3 +1,4 @@
+using Enemies;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,7 @@ namespace Common
 {
     public class InitGameManager : MonoBehaviour
     {
+        [SerializeField] private SpiderVisionEventBus spiderVisionEventBus;
         [SerializeField]
         private GameObject shipPrefab;
         [SerializeField]
@@ -22,6 +24,8 @@ namespace Common
         public void StartGame()
         {
             CreateSpider();
+            var player = CreatePlayerShip();
+            spiderVisionEventBus.Player = player;
         }
         
         // Spider Creator maybe
