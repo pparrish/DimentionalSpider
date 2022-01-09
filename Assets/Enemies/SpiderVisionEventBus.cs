@@ -7,7 +7,6 @@ namespace Enemies
     {
         public Transform leftLimit;
         public Transform rightLimit;
-        public Transform player;
         public Transform spider;
         
         private Rigidbody2D _rigidbody;

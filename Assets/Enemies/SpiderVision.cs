@@ -27,7 +27,6 @@ namespace Enemies
         private Rigidbody2D _rigidbody;
         public void Start()
         {
-            spiderVisionEventBus.player = player;
             spiderVisionEventBus.spider = transform;
             _rigidbody = GetComponent<Rigidbody2D>();
             spiderVisionEventBus.SetRigidbody();
