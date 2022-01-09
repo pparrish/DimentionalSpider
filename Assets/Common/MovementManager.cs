@@ -19,10 +19,10 @@ namespace Common
             base.Start();
             _movementStatistics = GetComponent<IShipMovementStatistics>();
             _rigidbody = GetComponent<Rigidbody2D>();
-            onMovement.AddListener(MoveAction);
-            onMovementStop.AddListener(StopAction);
-            onTurboActivated.AddListener((x) => _turbo = turboMultiplier);
-            onTurboCanceled.AddListener(x => _turbo = 1);
+            movementEventBus.onMovement.AddListener(MoveAction);
+            movementEventBus.onMovementStop.AddListener(StopAction);
+            movementEventBus.onTurboActivated.AddListener((x) => _turbo = turboMultiplier);
+            movementEventBus.onTurboCanceled.AddListener(x => _turbo = 1);
         }
 
         private void MoveAction(MovementDto movementDto)

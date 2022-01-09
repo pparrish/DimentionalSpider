@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
-
 
 namespace Common
 {
@@ -8,12 +6,9 @@ namespace Common
     {
         [SerializeField]
         private ControlEventBus controlEventBus;
+
+        [SerializeField] protected MovementEventBus movementEventBus;
         
-        public UnityEvent<MovementDto> onMovementStarted;
-        public UnityEvent<MovementDto> onMovement;
-        public UnityEvent<MovementDto> onMovementStop;
-        public UnityEvent<MovementDto> onTurboActivated;
-        public UnityEvent<MovementDto> onTurboCanceled;
         [SerializeField] private float timeToStop = 0.1f;
 
         private float _startedTimestamp;
@@ -32,7 +27,7 @@ namespace Common
             {
                 _startedTimestamp = Time.time;
                 _stopTimestamp = 0;
-                onMovementStarted?.Invoke(new MovementDto() {Direction = direction});
+                movementEventBus.onMovementStarted?.Invoke(new MovementDto() {Direction = direction});
             }
 
             if (_startedTimestamp != 0 && direction == Vector2.zero && _stopTimestamp == 0)
@@ -55,20 +50,20 @@ namespace Common
             {
                 _startedTimestamp = 0;
                 _stopTimestamp = 0;
-                onMovementStop?.Invoke(ToDto());
+                movementEventBus.onMovementStop?.Invoke(ToDto());
                 return;
             }
-            onMovement?.Invoke(ToDto());
+            movementEventBus.onMovement?.Invoke(ToDto());
         }
 
         private void Turbo(bool turboState)
         {
             if (!turboState)
             {
-                onTurboCanceled?.Invoke(ToDto());
+                movementEventBus.onTurboCanceled?.Invoke(ToDto());
                 return;
             }
-            onTurboActivated?.Invoke(ToDto());
+            movementEventBus.onTurboActivated?.Invoke(ToDto());
         }
 
         protected virtual MovementDto ToDto()

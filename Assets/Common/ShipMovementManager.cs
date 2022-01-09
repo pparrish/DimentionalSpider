@@ -18,10 +18,10 @@ namespace Common
             base.Start();
             _body = GetComponent<Rigidbody2D>();
             _movementStatistics = GetComponent<IShipMovementStatistics>();
-            onMovement.AddListener(x => _controlDirection = x.Direction);
-            onMovementStop.AddListener(x => _controlDirection = Vector2.zero);
-            onTurboActivated.AddListener((x) => _turbo = 1f);
-            onTurboCanceled.AddListener((x) => _turbo = 0f);
+            movementEventBus.onMovement.AddListener(x => _controlDirection = x.Direction);
+            movementEventBus.onMovementStop.AddListener(x => _controlDirection = Vector2.zero);
+            movementEventBus.onTurboActivated.AddListener((x) => _turbo = 1f);
+            movementEventBus.onTurboCanceled.AddListener((x) => _turbo = 0f);
         }
 
         private new void FixedUpdate()

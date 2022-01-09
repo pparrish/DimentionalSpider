@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: maxLife
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2229540103911536807, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: movementEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: 9fd61140dc32b474bbc567ad8480ed43, type: 2}
     - target: {fileID: 2229540103911536808, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_Name
       value: NewSpider
@@ -400,6 +404,10 @@ PrefabInstance:
       propertyPath: controlEventBus
       value: 
       objectReference: {fileID: 11400000, guid: 0e65199a98434f94192e5083157f4b5c, type: 2}
+    - target: {fileID: 415349549, guid: 6f93416d6a954e508bf073324581c465, type: 3}
+      propertyPath: movementEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b60a84daa9d91649a371170fe2d1176, type: 2}
     - target: {fileID: 4871936893113887987, guid: 6f93416d6a954e508bf073324581c465, type: 3}
       propertyPath: m_Name
       value: PlayerShip

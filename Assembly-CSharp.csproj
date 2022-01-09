@@ -103,6 +103,7 @@
      <Compile Include="Assets\AI\BaseAttackPattern.cs" />
      <Compile Include="Assets\Bullets\Bullet.cs" />
      <Compile Include="Assets\Common\ShipMovementManager.cs" />
+     <Compile Include="Assets\Common\MovementEventBus.cs" />
      <None Include="Assets\DiverseSpace\Diverse Space Skybox Readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program files/Unity/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
