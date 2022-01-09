@@ -31,6 +31,7 @@ namespace Weapons
     public class WeaponEventBus : ScriptableObject
     {
         public UnityEvent<FireRate, IBulletStatisticsModifier> ONShot { get; } = new UnityEvent<FireRate, IBulletStatisticsModifier>();
+        public UnityEvent<float> ONShotStart { get; } = new UnityEvent<float>();
         
         public StatisticsEventBus statistics;
         

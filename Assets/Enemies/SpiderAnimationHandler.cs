@@ -1,5 +1,6 @@
 ﻿using Common;
 using UnityEngine;
+using Weapons;
 
 namespace Enemies
 {
@@ -7,6 +8,9 @@ namespace Enemies
     {
         
         [SerializeField] private SpiderVisionEventBus spiderVisionEventBus;
+        [SerializeField] private WeaponEventBus mainWeaponEventBus;
+        [SerializeField] private WeaponEventBus supportWeaponEventBus;
+        [SerializeField] private WeaponEventBus powerWeaponEventBus;
         
         private Animator _animator;
         private static readonly int MainWeapon = Animator.StringToHash("MainWeapon");
@@ -23,6 +27,9 @@ namespace Enemies
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            mainWeaponEventBus.ONShotStart.AddListener(MainWeaponAttack);
+            supportWeaponEventBus.ONShotStart.AddListener(SupportWeaponAttack);
+            powerWeaponEventBus.ONShotStart.AddListener(PowerWeaponAttack);
         }
 
         private void LateUpdate()

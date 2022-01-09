@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Events;
 using ValueObjects;
 
 namespace Weapons
@@ -24,8 +23,6 @@ namespace Weapons
         private string projectileLayer;
         [SerializeField]
         private GameObject projectile;
-
-        public UnityEvent<float> onShootStart;
         
         private bool _shooting;
 
@@ -46,8 +43,7 @@ namespace Weapons
             var finalFireRate = fireRate.GetMultiplier(modificator.fireRate);
             var shotTime  = finalFireRate.Milliseconds;
             var timeToPerformShot = (int) (shotTime * shootPerformTime) ;
-
-            onShootStart?.Invoke(finalFireRate.ShootsPerSecond);
+            weaponEventBus.ONShotStart?.Invoke(finalFireRate.ShootsPerSecond);
             await Task.Delay(timeToPerformShot);
             
             CreateProjectile(bulletStatisticsModifier);
