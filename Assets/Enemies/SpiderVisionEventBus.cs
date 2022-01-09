@@ -13,7 +13,6 @@ namespace Enemies
         private Rigidbody2D _rigidbody;
 
         public float centerRatio;
-        public UnityEvent<SpiderVision.SpiderVisionDto> onCheckDistanceToLimits = new UnityEvent<SpiderVision.SpiderVisionDto>();
 
         public void UpdateDistanceToPlayer(Vector2 distance)
         {

@@ -23,7 +23,11 @@ namespace Enemies
         private void Start()
         {
             _animator = GetComponent<Animator>();
-            spiderVisionEventBus.onCheckDistanceToLimits.AddListener(DistanceToLimits);
+        }
+
+        private void LateUpdate()
+        {
+            DistanceToLimits();
         }
 
         public void MainWeaponAttack(float shotDuration)
@@ -63,23 +67,23 @@ namespace Enemies
         [SerializeField]
         private float acceptableDistanceToAnimateLimits;
         
-        public void DistanceToLimits(SpiderVision.SpiderVisionDto dto)
+        public void DistanceToLimits()
         {
-            if (dto.DistanceToLeftLimit < acceptableDistanceToAnimateLimits &&  dto.Velocity < 0f  )
+            if (spiderVisionEventBus.DistanceToLeftLimit < acceptableDistanceToAnimateLimits &&  spiderVisionEventBus.Velocity.x < 0f  )
             {
-                _animator.SetFloat(LeftLimit, 1 + (1/ dto.DistanceToLeftLimit)  );
+                _animator.SetFloat(LeftLimit, 1 + (1/ spiderVisionEventBus.DistanceToLeftLimit)  );
             }
-            if (dto.DistanceToLeftLimit >= acceptableDistanceToAnimateLimits && dto.Velocity > 0f)
+            if (spiderVisionEventBus.DistanceToLeftLimit >= acceptableDistanceToAnimateLimits && spiderVisionEventBus.Velocity.x > 0f)
             {
                 _animator.SetFloat(LeftLimit, -1);
             }
             
-            if (dto.DistanceToRightLimit < acceptableDistanceToAnimateLimits &&  dto.Velocity > 0f  )
+            if (spiderVisionEventBus.DistanceToRightLimit < acceptableDistanceToAnimateLimits &&  spiderVisionEventBus.Velocity.x > 0f  )
             {
-                _animator.SetFloat(RightLimit, 1 + (1/ dto.DistanceToRightLimit) );
+                _animator.SetFloat(RightLimit, 1 + (1/ spiderVisionEventBus.DistanceToRightLimit) );
             }
             
-            if (dto.DistanceToRightLimit >= acceptableDistanceToAnimateLimits && dto.Velocity < 0f)
+            if (spiderVisionEventBus.DistanceToRightLimit >= acceptableDistanceToAnimateLimits && spiderVisionEventBus.Velocity.x < 0f)
             {
                 _animator.SetFloat(RightLimit, -1);
             }
