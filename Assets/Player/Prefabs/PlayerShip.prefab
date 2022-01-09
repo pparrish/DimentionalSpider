@@ -5409,21 +5409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ba01858e4c11d43861f6c4f8fc86d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onMovementStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  onMovement:
-    m_PersistentCalls:
-      m_Calls: []
-  onMovementStop:
-    m_PersistentCalls:
-      m_Calls: []
-  onTurboActivated:
-    m_PersistentCalls:
-      m_Calls: []
-  onTurboCanceled:
-    m_PersistentCalls:
-      m_Calls: []
+  controlEventBus: {fileID: 11400000, guid: 0e65199a98434f94192e5083157f4b5c, type: 2}
+  movementEventBus: {fileID: 11400000, guid: 0b60a84daa9d91649a371170fe2d1176, type: 2}
   timeToStop: 0.05
   turboMultiplier: 1.5
   accelerationCurve:
@@ -5478,21 +5465,6 @@ MonoBehaviour:
   shotWithMissingFirePoint: 0
   projectileLayer: PlayerBullet
   projectile: {fileID: 834623220824408831, guid: 12bcd299e7c7da642ab3c859d4eb682b, type: 3}
-  onShootStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2269046094519554521}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4871936894169228266
 GameObject:
   m_ObjectHideFlags: 0

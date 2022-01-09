@@ -2784,7 +2784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 500
+  maxLife: 10
   life: 1
   maxVelocity: 20
   stopVelocity: 32
@@ -2822,45 +2822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlEventBus: {fileID: 11400000, guid: faa0e22809ea44f46a3e4eaf6aba71d4, type: 2}
-  onMovementStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  onMovement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1755438588}
-        m_TargetAssemblyTypeName: Enemies.SpiderAnimationHandler, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onMovementStop:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1755438588}
-        m_TargetAssemblyTypeName: Enemies.SpiderAnimationHandler, Assembly-CSharp
-        m_MethodName: OnStop
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onTurboActivated:
-    m_PersistentCalls:
-      m_Calls: []
-  onTurboCanceled:
-    m_PersistentCalls:
-      m_Calls: []
+  movementEventBus: {fileID: 11400000, guid: 9fd61140dc32b474bbc567ad8480ed43, type: 2}
   timeToStop: 0.1
   trajectoryCorrectionLimit: 0.1
   changeDirectionDetectionLimit: 0.5
@@ -2902,21 +2864,6 @@ MonoBehaviour:
   shotWithMissingFirePoint: 0
   projectileLayer: EnemyBullet
   projectile: {fileID: 8736938727661314620, guid: baccf433399399a49b8560358a315cc3, type: 3}
-  onShootStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1755438588}
-        m_TargetAssemblyTypeName: Enemies.SpiderAnimationHandler, Assembly-CSharp
-        m_MethodName: MainWeaponAttack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2229540103911536809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,21 +2883,6 @@ MonoBehaviour:
   shotWithMissingFirePoint: 0
   projectileLayer: EnemyBullet
   projectile: {fileID: 3239980650012306761, guid: 5eddafbb595700446a9524a6ba499beb, type: 3}
-  onShootStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1755438588}
-        m_TargetAssemblyTypeName: Enemies.SpiderAnimationHandler, Assembly-CSharp
-        m_MethodName: SupportWeaponAttack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2229540103911536831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2970,21 +2902,6 @@ MonoBehaviour:
   shotWithMissingFirePoint: 0
   projectileLayer: EnemyBullet
   projectile: {fileID: 8736938727661314620, guid: baccf433399399a49b8560358a315cc3, type: 3}
-  onShootStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1755438588}
-        m_TargetAssemblyTypeName: Enemies.SpiderAnimationHandler, Assembly-CSharp
-        m_MethodName: PowerWeaponAttack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2229540103911536830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3004,9 +2921,6 @@ MonoBehaviour:
   shotWithMissingFirePoint: 0
   projectileLayer: EnemyBullet
   projectile: {fileID: 8736938727661314620, guid: baccf433399399a49b8560358a315cc3, type: 3}
-  onShootStart:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1755438588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,6 +2933,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4454ce574e41adbc5fcc0eaf98438a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiderVisionEventBus: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
+  mainWeaponEventBus: {fileID: 11400000, guid: 50ee6ce3b2030a4419d8e01458486145, type: 2}
+  supportWeaponEventBus: {fileID: 11400000, guid: e0132b83aeb5871418079546c29e011a, type: 2}
+  powerWeaponEventBus: {fileID: 11400000, guid: b360f9feb7fd0cc44a850af6212255e1, type: 2}
+  acceptableDistanceToAnimateLimits: 3
 --- !u!114 &1755438575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3032,27 +2951,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiderControlEventBus: {fileID: 11400000, guid: faa0e22809ea44f46a3e4eaf6aba71d4, type: 2}
-  leftLimit: {fileID: 0}
-  rightLimit: {fileID: 0}
+  spiderVisionEventBus: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
   player: {fileID: 0}
-  isTouchingTheRightLimit: 0
-  isTouchingTheLeftLimit: 0
-  centerRatio: 0.5
-  onCheckDistanceToLimits:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1755438588}
-        m_TargetAssemblyTypeName: Enemies.SpiderAnimationHandler, Assembly-CSharp
-        m_MethodName: DistanceToLimits
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2229540103912538862
 GameObject:
   m_ObjectHideFlags: 0

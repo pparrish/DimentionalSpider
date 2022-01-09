@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &63924645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -224,38 +224,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1085353648}
-    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: leftLimit
-      value: 
-      objectReference: {fileID: 866553926}
-    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: rightLimit
-      value: 
-      objectReference: {fileID: 461454278}
-    - target: {fileID: 1755438575, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: spiderVisionEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
-    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: mainWeaponEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: 50ee6ce3b2030a4419d8e01458486145, type: 2}
-    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: powerWeaponEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: b360f9feb7fd0cc44a850af6212255e1, type: 2}
-    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: spiderVisionEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
-    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: supportWeaponEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: e0132b83aeb5871418079546c29e011a, type: 2}
-    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: acceptableDistanceToAnimateLimits
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2229540103911536802, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -300,14 +268,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2229540103911536805, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: maxLife
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2229540103911536807, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
-      propertyPath: movementEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: 9fd61140dc32b474bbc567ad8480ed43, type: 2}
     - target: {fileID: 2229540103911536808, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_Name
       value: NewSpider
@@ -400,14 +360,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 415349549, guid: 6f93416d6a954e508bf073324581c465, type: 3}
-      propertyPath: controlEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: 0e65199a98434f94192e5083157f4b5c, type: 2}
-    - target: {fileID: 415349549, guid: 6f93416d6a954e508bf073324581c465, type: 3}
-      propertyPath: movementEventBus
-      value: 
-      objectReference: {fileID: 11400000, guid: 0b60a84daa9d91649a371170fe2d1176, type: 2}
     - target: {fileID: 4871936893113887987, guid: 6f93416d6a954e508bf073324581c465, type: 3}
       propertyPath: m_Name
       value: PlayerShip
@@ -1494,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &937003020
 RectTransform:
   m_ObjectHideFlags: 0
