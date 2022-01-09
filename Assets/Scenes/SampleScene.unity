@@ -237,6 +237,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
     - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: spiderVisionEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
+    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: acceptableDistanceToAnimateLimits
       value: 3
       objectReference: {fileID: 0}

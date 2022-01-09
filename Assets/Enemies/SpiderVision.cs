@@ -1,6 +1,5 @@
 ﻿using Common;
 using UnityEngine;
-using UnityEngine.Events;
 
 
 namespace Enemies
@@ -16,7 +15,7 @@ namespace Enemies
         {
             Vector2 playerPosition = player.transform.position;
             spiderVisionEventBus.UpdateDistanceToPlayer(playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody));
-            onCheckDistanceToLimits.Invoke(new SpiderVisionDto()
+            spiderVisionEventBus.onCheckDistanceToLimits?.Invoke(new SpiderVisionDto()
             {
                 DistanceToLeftLimit = spiderVisionEventBus.DistanceToLeftLimit,
                 DistanceToRightLimit = spiderVisionEventBus.DistanceToRightLimit,
@@ -56,8 +55,6 @@ namespace Enemies
                 spiderVisionEventBus.IsTouchingTheRightLimit = false;
             }
         }
-
-        public UnityEvent<SpiderVisionDto> onCheckDistanceToLimits = new UnityEvent<SpiderVisionDto>();
 
         public class SpiderVisionDto
         {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Enemies
 {
@@ -10,6 +11,9 @@ namespace Enemies
         public Transform spider;
         
         private Rigidbody2D _rigidbody;
+
+        public float centerRatio;
+        public UnityEvent<SpiderVision.SpiderVisionDto> onCheckDistanceToLimits = new UnityEvent<SpiderVision.SpiderVisionDto>();
 
         public void UpdateDistanceToPlayer(Vector2 distance)
         {
@@ -38,7 +42,7 @@ namespace Enemies
         public Vector2 Velocity => _rigidbody.velocity;
         private float ArenaCenter => (rightLimit.position.x - leftLimit.position.x) * 0.5f;
         private float PositionInArena => spider.position.x - leftLimit.position.x;
-        public float centerRatio;
+        
         public bool IsOnCenter => PositionInArena >= ArenaCenter - centerRatio && PositionInArena <= ArenaCenter + centerRatio;
         public float DistanceToCenter => PositionInArena - ArenaCenter;
         

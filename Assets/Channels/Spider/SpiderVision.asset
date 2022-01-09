@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLimit: {fileID: 0}
   rightLimit: {fileID: 0}
-  player: {fileID: 0}
   spider: {fileID: 0}
+  centerRatio: 1
+  onCheckDistanceToLimits:
+    m_PersistentCalls:
+      m_Calls: []

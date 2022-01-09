@@ -5,12 +5,15 @@ namespace Enemies
 {
     public class SpiderAnimationHandler : MonoBehaviour
     {
+        
+        [SerializeField] private SpiderVisionEventBus spiderVisionEventBus;
+        
         private Animator _animator;
         private static readonly int MainWeapon = Animator.StringToHash("MainWeapon");
         private static readonly int MainWeaponShotDuration = Animator.StringToHash("MainWeaponShotDuration");
         private static readonly int SupportWeapon = Animator.StringToHash("SupportWeapon");
         private static readonly int SupportWeaponShotDuration = Animator.StringToHash("SupportWeaponShotDuration");
-         private static readonly int PowerWeapon = Animator.StringToHash("PowerWeapon");
+        private static readonly int PowerWeapon = Animator.StringToHash("PowerWeapon");
         private static readonly int PowerWeaponShotDuration = Animator.StringToHash("PowerWeaponShotDuration");
         private static readonly int VelocityX = Animator.StringToHash("VelocityX");
         private static readonly int LeftLimit = Animator.StringToHash("LeftLimit");
@@ -20,6 +23,7 @@ namespace Enemies
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            spiderVisionEventBus.onCheckDistanceToLimits.AddListener(DistanceToLimits);
         }
 
         public void MainWeaponAttack(float shotDuration)
