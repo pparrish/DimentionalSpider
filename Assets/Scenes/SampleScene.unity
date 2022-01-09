@@ -237,9 +237,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
     - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: mainWeaponEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: 50ee6ce3b2030a4419d8e01458486145, type: 2}
+    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: powerWeaponEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: b360f9feb7fd0cc44a850af6212255e1, type: 2}
+    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: spiderVisionEventBus
       value: 
       objectReference: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
+    - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: supportWeaponEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: e0132b83aeb5871418079546c29e011a, type: 2}
     - target: {fileID: 1755438588, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: acceptableDistanceToAnimateLimits
       value: 3
