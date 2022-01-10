@@ -513,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 1264844755}
     - target: {fileID: 2229540103911536802, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2229540103911536802, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewSpider
       objectReference: {fileID: 0}
+    - target: {fileID: 2229540103911536828, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
+      propertyPath: lifeEntityEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: 1436eedf44b6d2147bd31429920f76fc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
 --- !u!1 &1221075973
@@ -827,7 +831,7 @@ GameObject:
   - component: {fileID: 1675092323}
   - component: {fileID: 1675092322}
   m_Layer: 0
-  m_Name: InitialiceGameManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,6 +850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiderVisionEventBus: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
+  playerLifeEventBus: {fileID: 11400000, guid: f5fed43cb77b26d4d9ed6e04c5fdd553, type: 2}
+  spiderLifeEventBus: {fileID: 11400000, guid: 1436eedf44b6d2147bd31429920f76fc, type: 2}
   shipPrefab: {fileID: 4871936893113887987, guid: 6f93416d6a954e508bf073324581c465, type: 3}
   spiderPrefab: {fileID: 2229540103911536808, guid: 42461abe5018f0b43a06b9b25f20862b, type: 3}
   startPoint: {fileID: 1221075974}
@@ -865,6 +871,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  aPlayer: {fileID: 1866039420}
 --- !u!4 &1675092323
 Transform:
   m_ObjectHideFlags: 0
@@ -974,7 +981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4871936893113887989, guid: 6f93416d6a954e508bf073324581c465, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4871936893113887989, guid: 6f93416d6a954e508bf073324581c465, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1016,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4871936893113887995, guid: 6f93416d6a954e508bf073324581c465, type: 3}
+      propertyPath: lifeEntityEventBus
+      value: 
+      objectReference: {fileID: 11400000, guid: f5fed43cb77b26d4d9ed6e04c5fdd553, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f93416d6a954e508bf073324581c465, type: 3}
 --- !u!1 &1865211568
@@ -1048,6 +1059,11 @@ Transform:
   m_Father: {fileID: 690116762}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1866039420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4871936893113887987, guid: 6f93416d6a954e508bf073324581c465, type: 3}
+  m_PrefabInstance: {fileID: 1771878178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958415237
 GameObject:
   m_ObjectHideFlags: 0

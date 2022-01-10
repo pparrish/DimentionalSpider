@@ -345,8 +345,8 @@ MonoBehaviour:
   - {fileID: 2229540103618723037}
   - {fileID: 2229540103355691129}
   m_Bounds:
-    m_Center: {x: -0.0052618384, y: -0.06760086, z: 0}
-    m_Extent: {x: 0.8528705, y: 0.09129818, z: 0}
+    m_Center: {x: -0.005262792, y: -0.06760033, z: 0}
+    m_Extent: {x: 0.8528696, y: 0.0912986, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &2229540102099507171
@@ -386,6 +386,7 @@ MonoBehaviour:
   lifeChange:
     m_PersistentCalls:
       m_Calls: []
+  lifeEntityEventBus: {fileID: 0}
 --- !u!1 &2229540102137864401
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,8 +495,8 @@ MonoBehaviour:
   - {fileID: 2229540103946605273}
   - {fileID: 2229540103686034785}
   m_Bounds:
-    m_Center: {x: 0.024892807, y: 0.039109454, z: 0}
-    m_Extent: {x: 1.0260291, y: 0.12728931, z: 0}
+    m_Center: {x: 0.024892807, y: 0.03910993, z: 0}
+    m_Extent: {x: 1.0260291, y: 0.12728883, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &2229540102137864491
@@ -535,6 +536,7 @@ MonoBehaviour:
   lifeChange:
     m_PersistentCalls:
       m_Calls: []
+  lifeEntityEventBus: {fileID: 0}
 --- !u!1 &2229540102166038698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2354,7 @@ MonoBehaviour:
   lifeChange:
     m_PersistentCalls:
       m_Calls: []
+  lifeEntityEventBus: {fileID: 0}
 --- !u!1 &2229540103643349316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,8 +2611,8 @@ MonoBehaviour:
   - {fileID: 2229540102166038699}
   - {fileID: 2229540103529825482}
   m_Bounds:
-    m_Center: {x: 0.017911553, y: -0.24318165, z: 0}
-    m_Extent: {x: 0.1137723, y: 0.08199227, z: 0}
+    m_Center: {x: 0.0179106, y: -0.24318117, z: 0}
+    m_Extent: {x: 0.11377326, y: 0.081992745, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2229540103774401284
@@ -2809,6 +2812,7 @@ MonoBehaviour:
   lifeChange:
     m_PersistentCalls:
       m_Calls: []
+  lifeEntityEventBus: {fileID: 11400000, guid: 1436eedf44b6d2147bd31429920f76fc, type: 2}
 --- !u!114 &2229540103911536807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2952,7 +2956,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spiderControlEventBus: {fileID: 11400000, guid: faa0e22809ea44f46a3e4eaf6aba71d4, type: 2}
   spiderVisionEventBus: {fileID: 11400000, guid: cc17727dd31dd6c48b093cdac6fffd4d, type: 2}
-  player: {fileID: 0}
 --- !u!1 &2229540103912538862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,7 +3185,7 @@ MonoBehaviour:
   - {fileID: 2229540102170465082}
   - {fileID: 2229540103088952153}
   m_Bounds:
-    m_Center: {x: 0.023042321, y: -0.45195958, z: 0}
+    m_Center: {x: 0.023042321, y: -0.45195863, z: 0}
     m_Extent: {x: 0.5147912, y: 0.3646827, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -3223,6 +3226,7 @@ MonoBehaviour:
   lifeChange:
     m_PersistentCalls:
       m_Calls: []
+  lifeEntityEventBus: {fileID: 0}
 --- !u!1 &2229540104061541332
 GameObject:
   m_ObjectHideFlags: 0

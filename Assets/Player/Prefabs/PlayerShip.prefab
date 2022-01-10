@@ -5169,6 +5169,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lifeEntityEventBus: {fileID: 11400000, guid: f5fed43cb77b26d4d9ed6e04c5fdd553, type: 2}
 --- !u!60 &1156551547
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ namespace Enemies
 
         private void LateUpdate()
         {
+            if(!spiderVisionEventBus.player) return;
             Vector2 playerPosition = spiderVisionEventBus.player.transform.position;
             spiderVisionEventBus.UpdateDistanceToPlayer(playerPosition - Physics2D.ClosestPoint(playerPosition, _rigidbody));
         }

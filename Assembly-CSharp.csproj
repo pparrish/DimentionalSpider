@@ -95,6 +95,7 @@
      <Compile Include="Assets\GameData\GameData.cs" />
      <Compile Include="Assets\GameData\StatsData.cs" />
      <Compile Include="Assets\Enemies\SpiderAnimationHandler.cs" />
+     <Compile Include="Assets\Common\MovementEventBus.cs" />
      <Compile Include="Assets\UI\ChangePanel.cs" />
      <Compile Include="Assets\Weapons\Interfaces\IShipWeaponStatistic.cs" />
      <Compile Include="Assets\AI\IAttackPattern.cs" />
@@ -103,7 +104,8 @@
      <Compile Include="Assets\AI\BaseAttackPattern.cs" />
      <Compile Include="Assets\Bullets\Bullet.cs" />
      <Compile Include="Assets\Common\ShipMovementManager.cs" />
-     <Compile Include="Assets\Common\MovementEventBus.cs" />
+     <Compile Include="Assets\Common\LifeEntityEventBus.cs" />
+     <Compile Include="Assets\ActivePanelOnDeath.cs" />
      <None Include="Assets\DiverseSpace\Diverse Space Skybox Readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program files/Unity/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

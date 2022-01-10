@@ -17,7 +17,7 @@ namespace UI
 
         private void Change()
         {
-            if(next == null) next.SetActive(true);
+            if(next != null) next.SetActive(true);
             actual.SetActive(false);
         }
 

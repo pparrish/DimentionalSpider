@@ -15,6 +15,8 @@ namespace Common
         private ILifeStatistic _lifeStatistic;
         public LifeChangeEvent lifeChange;
         private bool Death => _lifeStatistic.GetLife() <= 0;
+
+        [SerializeField] private LifeEntityEventBus lifeEntityEventBus;
         
         private void Start()
         {
@@ -32,6 +34,8 @@ namespace Common
 
         private void DestroyMe()
         {
+            if(lifeEntityEventBus)
+                lifeEntityEventBus.onDeath?.Invoke();
             GameObject o;
             (o = gameObject).SetActive(false);
             Destroy(o, 0.05f);
