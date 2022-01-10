@@ -17,9 +17,8 @@ namespace UI
 
         private void Change()
         {
+            if(next == null) next.SetActive(true);
             actual.SetActive(false);
-            if(next == null)  return;
-            next.SetActive(true);
         }
 
         public void SetPanels(GameObject newActual, GameObject newNext)
