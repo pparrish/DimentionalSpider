@@ -21,7 +21,17 @@ namespace Player
             _shipControls.Player.Turbo.canceled += OnStopTurbo;
             _shipControls.Player.Enable();
         }
-        
+
+        public void EnableControls()
+        {
+            _shipControls.Player.Enable();
+        }
+
+        public void DisableControls()
+        {
+            _shipControls.Player.Disable();
+        }
+
         private void OnTurboStarted(InputAction.CallbackContext context)
         {
             OnTurbo?.Invoke(true);

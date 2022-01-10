@@ -8,14 +8,24 @@ namespace ValueObjects
     {
         [SerializeField]
         private float shotsPerSecond;
+        [SerializeField] 
+        private Multiplier multiplier = new Multiplier();
         
         public FireRate(float shotsPerSecond=1)
         {
             this.shotsPerSecond = shotsPerSecond;
         }
-        public float Value => (1f / shotsPerSecond);
 
-        public float ShootsPerSecond => shotsPerSecond;
+        private FireRate(Multiplier aMultiplier, float shotsPerSecond = 1) : this(shotsPerSecond)
+        {
+            multiplier = aMultiplier;
+        }
+        
+        private float MultipliedShotsPerSecond => shotsPerSecond * multiplier;
+        
+        public float Value => (1f / MultipliedShotsPerSecond);
+
+        public float ShootsPerSecond => MultipliedShotsPerSecond;
 
         public int Milliseconds => (int)(Value * 1000) ;
 
@@ -27,7 +37,12 @@ namespace ValueObjects
 
         public FireRate GetMultiplier(Multiplier aMultiplier)
         {
-            return new FireRate(shotsPerSecond * aMultiplier);
+            return new FireRate(aMultiplier + multiplier, shotsPerSecond  );
         }
+
+        public FireRate RemoveMultiplier(Multiplier aMultiplier)
+        {
+            return new FireRate( aMultiplier - multiplier, shotsPerSecond);
+        } 
     }
 }

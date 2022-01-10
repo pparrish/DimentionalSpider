@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986475504178626581, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InitGameManager, Assembly-CSharp
+      value: Common.InitGameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8986475504178626581, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986475504521034725, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
       propertyPath: m_Name
-      value: SpideUi
+      value: Spider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}

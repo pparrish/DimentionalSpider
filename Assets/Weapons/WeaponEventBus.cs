@@ -38,8 +38,7 @@ namespace Weapons
         public void Shoot()
         {
             ONShot?.Invoke(
-                    new FireRate(
-                        FireRate.FireRateToShootsPerSecond(statistics.activeStats.GetFireRate())),
+                    statistics.activeStats.GetFireRate(),
                     new BulletStatsModifier(statistics.activeStats)
             );
         }

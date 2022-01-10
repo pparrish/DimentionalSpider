@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &63924645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1809,7 +1809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &937003020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2455,19 +2455,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1064376923}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.MenuManager, Assembly-CSharp
-        m_MethodName: OnBackButtonPress
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1064376923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4171,20 +4159,29 @@ MonoBehaviour:
   spiderSelectionPanel: {fileID: 925137716}
   initGameManager: {fileID: 1675092322}
   ships:
-  - life: 5
-    velocity: 15
-    damage: 1
-    fireRate: 1
-    bulletSpeed: 1
-  - life: 2
-    velocity: 30
-    damage: 1
-    fireRate: 0.5
-    bulletSpeed: 0.2
-  - life: 5
+  - life: 6
     velocity: 10
+    damage: 1
+    fireRate:
+      shotsPerSecond: 1
+      multiplier:
+        value: 1
+    bulletSpeed: 1
+  - life: 10
+    velocity: 25
+    damage: 0.2
+    fireRate:
+      shotsPerSecond: 5
+      multiplier:
+        value: 1
+    bulletSpeed: 5
+  - life: 1
+    velocity: 5
     damage: 10
-    fireRate: 5
+    fireRate:
+      shotsPerSecond: 1
+      multiplier:
+        value: 1
     bulletSpeed: 0.2
 --- !u!4 &1898458096
 Transform:
@@ -4851,14 +4848,38 @@ PrefabInstance:
       propertyPath: actual
       value: 
       objectReference: {fileID: 925137716}
-    - target: {fileID: 921615309726687783, guid: f459edd2fced4634e89a860a378703df, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1675092322}
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e65199a98434f94192e5083157f4b5c, type: 2}
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EnableControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Player.PayerControlEventBus, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105463269080216982, guid: f459edd2fced4634e89a860a378703df, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8105463269816798822, guid: f459edd2fced4634e89a860a378703df, type: 3}
       propertyPath: m_Name
       value: Spider

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NoDamage
   m_EditorClassIdentifier: 
   fireRate:
-    value: 1
+    value: 0.8
   damage:
     value: 0
   scale:

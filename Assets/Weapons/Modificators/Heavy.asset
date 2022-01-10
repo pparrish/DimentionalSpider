@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heavy
   m_EditorClassIdentifier: 
   fireRate:
-    value: 0.25
+    value: 0.1
   damage:
     value: 2
   scale:

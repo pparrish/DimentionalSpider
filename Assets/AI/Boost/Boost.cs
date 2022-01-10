@@ -1,16 +1,17 @@
 ﻿using Bullets;
+using ValueObjects;
 
 namespace AI.Boost
 {
     public class Boost : IAttackPattern
     {
         private ICanTakeStatusEffects _fireRate;
-        private float _change;
+        private Multiplier _change;
         private string _statusEffectID = "";
         private readonly Boost _addStatusEffect;
         private readonly Boost _removeStatusEffect;
 
-        public Boost(ICanTakeStatusEffects statusTaker, float change)
+        public Boost(ICanTakeStatusEffects statusTaker, Multiplier change)
         {
             _removeStatusEffect = new Boost(this);
             _change = change;

@@ -26,4 +26,17 @@ namespace Tests
             Assert.AreEqual(resultShotsPerSecond, expectedShotsPerSecond);
         }
     }
+
+    public class MultiplierTests
+    {
+        [Test]
+        public void add_a_multiplier_of_0p5_to_a_multiplier_of_1_is_0p5()
+        {
+            var a = new Multiplier();
+            var b = new Multiplier(0.5f);
+            var c = a + b;
+            
+            Assert.AreEqual(c.Value,new Multiplier(0.5f).Value);
+        }
+    }
 }

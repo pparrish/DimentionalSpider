@@ -86,6 +86,7 @@
      <Compile Include="Assets\AI\Attack\ConstantAttack.cs" />
      <Compile Include="Assets\AI\Movement\GoToCenter.cs" />
      <Compile Include="Assets\Common\StatisticsEventBus.cs" />
+     <Compile Include="Assets\ActivePanelOnDeath.cs" />
      <Compile Include="Assets\AI\TimeOutPattern.cs" />
      <Compile Include="Assets\Common\ControlEventBus.cs" />
      <Compile Include="Assets\AI\ComposedAttackPattern.cs" />
@@ -103,9 +104,8 @@
      <Compile Include="Assets\Enemies\EnemyContactDamager.cs" />
      <Compile Include="Assets\AI\BaseAttackPattern.cs" />
      <Compile Include="Assets\Bullets\Bullet.cs" />
-     <Compile Include="Assets\Common\ShipMovementManager.cs" />
      <Compile Include="Assets\Common\LifeEntityEventBus.cs" />
-     <Compile Include="Assets\ActivePanelOnDeath.cs" />
+     <Compile Include="Assets\Common\ShipMovementManager.cs" />
      <None Include="Assets\DiverseSpace\Diverse Space Skybox Readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program files/Unity/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

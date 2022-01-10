@@ -3,6 +3,7 @@ using System.Linq;
 using Bullets;
 using GameData;
 using UnityEngine;
+using ValueObjects;
 using Weapons;
 using Random = UnityEngine.Random;
 
@@ -17,7 +18,7 @@ namespace Common
         [SerializeField] private float acceleration = 1f;
         [SerializeField] private float damageMultiplier = 1f;
         [SerializeField] private float bulletSpeedMultiplier = 1f;
-        [SerializeField] private float fireRate = 0.5f;
+        [SerializeField] private FireRate fireRate = new FireRate(2);
         [SerializeField] private float growFactor = 1;
         // maybe convert to a statistics event bus
         [SerializeField]
@@ -35,7 +36,7 @@ namespace Common
             float newMaxVelocity,
             float newDamage,
             float newBulletSpeed,
-            float newFireRate)
+            FireRate newFireRate)
         {
             maxLife = newMaxLife;
             maxVelocity = newMaxVelocity;
@@ -123,23 +124,23 @@ namespace Common
             return bulletSpeedMultiplier;
         }
 
-        public float GetFireRate()
+        public FireRate GetFireRate()
         {
             return fireRate;
         }
 
-        private float _fireRateActiveBoost;
+        private Multiplier _fireRateActiveBoost;
 
-        private void SetFireRateBoost(float boost)
+        private void SetFireRateBoost(Multiplier boost)
         {
-            fireRate *= boost;
+            fireRate = fireRate.GetMultiplier(boost);
             _fireRateActiveBoost = boost;
         }
 
         private void RemoveFireRateBoost()
         {
-            fireRate /= _fireRateActiveBoost;
-            _fireRateActiveBoost = 0;
+            fireRate = fireRate.RemoveMultiplier(_fireRateActiveBoost);
+            _fireRateActiveBoost = new Multiplier(0);
         }
         
         private class StatusChange
@@ -177,7 +178,7 @@ namespace Common
             
         }
         
-        public string TakeStatusEffect(float change, float duration)
+        public string TakeStatusEffect(Multiplier change, float duration)
         {
             var id = Time.time + "" + change+ "" + duration;
             //Add fireRate boost per statusEffect

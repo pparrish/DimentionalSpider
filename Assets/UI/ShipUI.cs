@@ -1,4 +1,3 @@
-using Bullets;
 using Common;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +33,7 @@ namespace UI
             lifeFill.fillAmount = _life.GetMaxLife()/maxLife;
             _weapon = GetComponent<IShipWeaponStatistic>();
             damageFill.fillAmount = _weapon.GetWeaponDamage() / maxDamage;
-            fireRateFill.fillAmount = (maxFireRate - _weapon.GetFireRate())/maxFireRate;
+            fireRateFill.fillAmount =  _weapon.GetFireRate().ShootsPerSecond / maxFireRate;
             bulletSpeedFill.fillAmount = _weapon.GetWeaponBulletSpeed() / maxBulletSpeed;
             _movementStatistics = GetComponent<IShipMovementStatistics>();
             velocityFill.fillAmount = _movementStatistics.GetMaxVelocity() / maxVelocity;
