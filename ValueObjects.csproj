@@ -54,6 +54,7 @@
   <ItemGroup>
      <Compile Include="Assets\ValueObjects\FireRate.cs" />
      <Compile Include="Assets\ValueObjects\Multiplier.cs" />
+     <Compile Include="Assets\ValueObjects\Life.cs" />
      <None Include="Assets\ValueObjects\ValueObjects.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program files/Unity/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
