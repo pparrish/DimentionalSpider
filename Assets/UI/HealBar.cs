@@ -14,7 +14,12 @@ namespace UI
 
       public void OnLifeChange(ILifeStatistic life)
       {
-         _healImage.fillAmount = life.GetLife() / life.GetMaxLife();
+         if (life.Life.Actual == 0)
+         {
+            _healImage.fillAmount = 0;
+            return;
+         }
+         _healImage.fillAmount = life.Life.Actual / life.Life.Total;
       }
    }
 }

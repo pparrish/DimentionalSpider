@@ -1,14 +1,15 @@
 using Bullets;
 using UnityEngine;
 using UnityEngine.Events;
+using ValueObjects;
 
 namespace Common
 {
     public class LifeEntityChild : MonoBehaviour, IDamageable
     {
-        public UnityEvent<float> onDamageTaked;
+        public UnityEvent<Damage> onDamageTaked;
         
-        public void TakeDamage(float damage)
+        public void TakeDamage(Damage damage)
         {
             onDamageTaked?.Invoke(damage);
         }

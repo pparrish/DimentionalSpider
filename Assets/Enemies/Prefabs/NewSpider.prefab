@@ -361,14 +361,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 25
-  life: 1
+  life:
+    actual: 25
+    total: 25
   maxVelocity: 1
   stopVelocity: 1
   acceleration: 1
   damageMultiplier: 1
   bulletSpeedMultiplier: 1
-  fireRate: 0.5
+  fireRate:
+    shotsPerSecond: 2
+    multiplier:
+      value: 1
   growFactor: 1
   statisticsEventBus: {fileID: 0}
 --- !u!114 &2229540102099507170
@@ -511,14 +515,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 25
-  life: 1
+  life:
+    actual: 25
+    total: 25
   maxVelocity: 1
   stopVelocity: 1
   acceleration: 1
   damageMultiplier: 1
   bulletSpeedMultiplier: 1
-  fireRate: 0.5
+  fireRate:
+    shotsPerSecond: 2
+    multiplier:
+      value: 1
   growFactor: 1
   statisticsEventBus: {fileID: 0}
 --- !u!114 &2229540102137864490
@@ -2329,14 +2337,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 25
-  life: 1
+  life:
+    actual: 25
+    total: 25
   maxVelocity: 1
   stopVelocity: 1
   acceleration: 1
   damageMultiplier: 1
   bulletSpeedMultiplier: 1
-  fireRate: 0.5
+  fireRate:
+    shotsPerSecond: 2
+    multiplier:
+      value: 1
   growFactor: 1
   statisticsEventBus: {fileID: 0}
 --- !u!114 &2229540103638988418
@@ -2787,14 +2799,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 10
-  life: 1
+  life:
+    actual: 50
+    total: 50
   maxVelocity: 20
   stopVelocity: 32
   acceleration: 8
   damageMultiplier: 1
   bulletSpeedMultiplier: 1
-  fireRate: 1
+  fireRate:
+    shotsPerSecond: 2
+    multiplier:
+      value: 1
   growFactor: 1
   statisticsEventBus: {fileID: 11400000, guid: ac96c7b764ad3e74fba3d2f3f8853620, type: 2}
 --- !u!114 &2229540103911536828
@@ -3201,14 +3217,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 25
-  life: 1
+  life:
+    actual: 25
+    total: 25
   maxVelocity: 1
   stopVelocity: 1
   acceleration: 1
   damageMultiplier: 1
   bulletSpeedMultiplier: 1
-  fireRate: 0.5
+  fireRate:
+    shotsPerSecond: 2
+    multiplier:
+      value: 1
   growFactor: 1
   statisticsEventBus: {fileID: 0}
 --- !u!114 &2229540104025026363

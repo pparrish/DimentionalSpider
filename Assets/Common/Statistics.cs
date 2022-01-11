@@ -11,8 +11,13 @@ namespace Common
 {
     public class Statistics : MonoBehaviour, ILifeStatistic, IShipMovementStatistics, IShipWeaponStatistic, ICanTakeStatusEffects
     {
-        [SerializeField] private float maxLife = 1f;
-        [SerializeField] private float life = 1f;
+        public Life life = new Life(5);
+        public Life Life
+        {
+            get => life;
+            set => life = value;
+        }
+        
         [SerializeField] private float maxVelocity = 1f;
         [SerializeField] private float stopVelocity = 1f;
         [SerializeField] private float acceleration = 1f;
@@ -32,13 +37,13 @@ namespace Common
             }
         }
 
-        private void SetStats(float newMaxLife,
+        private void SetStats(Life newLife,
             float newMaxVelocity,
             float newDamage,
             float newBulletSpeed,
             FireRate newFireRate)
         {
-            maxLife = newMaxLife;
+            Life = newLife;
             maxVelocity = newMaxVelocity;
             damageMultiplier = newDamage;
             bulletSpeedMultiplier = newBulletSpeed;
@@ -48,23 +53,25 @@ namespace Common
         public void CombineStatistics(Statistics other)
         {
             //For combine a statistic first get the strongestStatistic
-            var biggest = other.maxLife > maxLife ? other.maxLife : maxLife;
+            var biggest = other.Life.Total > Life.Total ? other.Life.Total : Life.Total;
+            
             //Get the difference between the two statistics
-            var difference = Mathf.Abs(other.maxLife - maxLife);
+            var difference = Mathf.Abs(other.Life.Total - Life.Total);
+            
             //know if are a mutation
             var mutation = Random.value > 0.5f;
             if (mutation)
             {
-                maxLife = biggest + difference * growFactor;
+                Life = new Life(biggest + difference * growFactor);
                 return;
             }
-            maxLife = biggest;
+            Life = new Life(biggest);
         }
 
         public void SetStats(Statistics newStatistics)
         {
             SetStats(
-                newStatistics.GetMaxLife(),
+                newStatistics.Life,
                 newStatistics.GetMaxVelocity(),
                 newStatistics.GetWeaponDamage(),
                 newStatistics.GetWeaponBulletSpeed(),
@@ -81,22 +88,6 @@ namespace Common
                 newStats.bulletSpeed,
                 newStats.fireRate
                 );
-        }
-
-        public float GetMaxLife()
-        {
-            return maxLife;
-        }
-
-        public float SetLife(float newLife)
-        {
-            life = newLife;
-            return life;
-        }
-
-        public float GetLife()
-        {
-            return life;
         }
 
         public float GetMaxVelocity()
@@ -211,5 +202,7 @@ namespace Common
                 _listOfStatusChanges.Remove(key);
             }
         }
+
+        
     }
 }

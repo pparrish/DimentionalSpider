@@ -1240,10 +1240,9 @@ MonoBehaviour:
   damageFill: {fileID: 8986475504637520762}
   fireRateFill: {fileID: 8986475503679045450}
   bulletSpeedFill: {fileID: 8986475504790827755}
-  maxLife: 7
   maxVelocity: 50
   maxDamage: 3
-  maxFireRate: 1
+  maxFireRate: 10
   maxBulletSpeed: 3
 --- !u!114 &8986475504521034721
 MonoBehaviour:
@@ -1257,15 +1256,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82732e4bc7696d47a16b6565ca89685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 3
-  life: 1
+  life:
+    actual: 5
+    total: 5
   maxVelocity: 30
   stopVelocity: 1
   acceleration: 1
   damageMultiplier: 1
   bulletSpeedMultiplier: 1
-  fireRate: 0.5
+  fireRate:
+    shotsPerSecond: 2
+    multiplier:
+      value: 1
   growFactor: 1
+  statisticsEventBus: {fileID: 0}
 --- !u!1 &8986475504637520764
 GameObject:
   m_ObjectHideFlags: 0

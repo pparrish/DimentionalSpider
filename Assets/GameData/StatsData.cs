@@ -6,7 +6,7 @@ namespace GameData
     [Serializable]
     public class StatsData
     {
-        public float life = 3;
+        public Life life = new Life(5);
         public float velocity = 30;
         public float damage = 1;
         public FireRate fireRate = new FireRate(2);

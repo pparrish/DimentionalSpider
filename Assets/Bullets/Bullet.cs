@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using ValueObjects;
 using Weapons;
 
 namespace Bullets
@@ -10,7 +11,7 @@ namespace Bullets
         // TODO maybe change to invariable
         public class BulletDto
         {
-            public float Damage;
+            public Damage Damage;
             public Collider2D Hit;
 
             public BulletDto SetHit(Collider2D newHit)
@@ -23,7 +24,7 @@ namespace Bullets
         [Serializable]
         public class BulletHitEvent : UnityEvent<BulletDto> {}
         
-        private BulletDto ToDto => new BulletDto() { Damage = this.Damage,  };
+        private BulletDto ToDto => new BulletDto() { Damage = Damage,  };
 
         public BulletHitEvent onHit;
         public BulletHitEvent onKeepInContact;
@@ -34,9 +35,9 @@ namespace Bullets
         [SerializeField] private float speedModification = 1;
         private float Speed => speedBase * speedModification;
         
-        [SerializeField] private float damageBase = 1f;
-        [SerializeField] private float damageModification = 1f;
-        private float Damage => damageBase * damageModification;
+        [SerializeField] private Damage damageBase = new Damage(1);
+        [SerializeField] private Multiplier damageModification = new Multiplier(1f);
+        private Damage Damage => damageBase.Modificator(damageModification) ;
         
         [Header("Options")]
         [SerializeField]
@@ -79,7 +80,7 @@ namespace Bullets
             damageable.TakeDamage(bulletDto.Damage);
         }
 
-        public void SetModifiers(float speed, float damage, float size)
+        public void SetModifiers(float speed, Multiplier damage, float size)
         {
             speedModification = speed;
             damageModification = damage;

@@ -1,7 +1,9 @@
+using ValueObjects;
+
 namespace Bullets
 {
     public interface IDamageable
     {
-        void TakeDamage(float damage);
+        void TakeDamage(Damage damage);
     }
 }

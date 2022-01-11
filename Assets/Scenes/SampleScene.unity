@@ -4159,7 +4159,9 @@ MonoBehaviour:
   spiderSelectionPanel: {fileID: 925137716}
   initGameManager: {fileID: 1675092322}
   ships:
-  - life: 6
+  - life:
+      actual: 5
+      total: 5
     velocity: 10
     damage: 1
     fireRate:
@@ -4167,7 +4169,9 @@ MonoBehaviour:
       multiplier:
         value: 1
     bulletSpeed: 1
-  - life: 10
+  - life:
+      actual: 10
+      total: 10
     velocity: 25
     damage: 0.2
     fireRate:
@@ -4175,11 +4179,13 @@ MonoBehaviour:
       multiplier:
         value: 1
     bulletSpeed: 5
-  - life: 1
+  - life:
+      actual: 2
+      total: 2
     velocity: 5
     damage: 10
     fireRate:
-      shotsPerSecond: 1
+      shotsPerSecond: 0.2
       multiplier:
         value: 1
     bulletSpeed: 0.2

@@ -2,6 +2,7 @@ using System;
 using Bullets;
 using UnityEngine;
 using UnityEngine.Events;
+using ValueObjects;
 
 namespace Common
 {
@@ -14,19 +15,20 @@ namespace Common
     {
         private ILifeStatistic _lifeStatistic;
         public LifeChangeEvent lifeChange;
-        private bool Death => _lifeStatistic.GetLife() <= 0;
+        private bool Death => _lifeStatistic.Life.Actual == 0;
 
         [SerializeField] private LifeEntityEventBus lifeEntityEventBus;
         
         private void Start()
         {
             _lifeStatistic = GetComponent<ILifeStatistic>();
-            _lifeStatistic.SetLife(_lifeStatistic.GetMaxLife());
+            //TODO: Reset the life for now, but later this must be removed
+            _lifeStatistic.Life = new Life(_lifeStatistic.Life.Total);
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(Damage damage)
         {
-            _lifeStatistic.SetLife(_lifeStatistic.GetLife() - damage);
+            _lifeStatistic.Life = _lifeStatistic.Life.Damage(damage);
             lifeChange.Invoke(_lifeStatistic);
             if (!Death) return;
             DestroyMe();

@@ -99,6 +99,14 @@ PrefabInstance:
       propertyPath: maxLife
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8986475504521034721, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
+      propertyPath: life.total
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986475504521034721, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
+      propertyPath: life.actual
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8986475504521034724, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -185,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986475504521034725, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}
       propertyPath: m_Name
-      value: Spider
+      value: SpideUi
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce00cecb8fae20d40b51e25b432a26f4, type: 3}

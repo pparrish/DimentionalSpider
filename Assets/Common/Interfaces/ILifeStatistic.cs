@@ -1,9 +1,12 @@
-﻿namespace Common
+﻿using ValueObjects;
+
+namespace Common
 {
     public interface ILifeStatistic
     {
-        public float GetMaxLife();
-        public float SetLife(float newLife);
-        public float GetLife();
+        public Life Life{
+            set;
+            get;
+        }
     }
 }

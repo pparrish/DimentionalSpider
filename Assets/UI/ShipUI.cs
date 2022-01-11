@@ -1,6 +1,7 @@
 using Common;
 using UnityEngine;
 using UnityEngine.UI;
+using ValueObjects;
 using Weapons;
 
 
@@ -13,10 +14,9 @@ namespace UI
         [SerializeField] private Image damageFill;
         [SerializeField] private Image fireRateFill;
         [SerializeField] private Image bulletSpeedFill;
-        [SerializeField] private float maxLife = 1;
         [SerializeField] private float maxVelocity = 1;
         [SerializeField] private float maxDamage = 1;
-        [SerializeField] private float maxFireRate = 5;
+        [SerializeField] private float maxFireRate = 10;
         [SerializeField] private float maxBulletSpeed = 1;
         private ILifeStatistic _life;
         private IShipWeaponStatistic _weapon;
@@ -30,7 +30,7 @@ namespace UI
         public void SetStatsFills()
         {
             _life = GetComponent<ILifeStatistic>();
-            lifeFill.fillAmount = _life.GetMaxLife()/maxLife;
+            lifeFill.fillAmount = _life.Life.Total / Life.MaximumAllowed ;
             _weapon = GetComponent<IShipWeaponStatistic>();
             damageFill.fillAmount = _weapon.GetWeaponDamage() / maxDamage;
             fireRateFill.fillAmount =  _weapon.GetFireRate().ShootsPerSecond / maxFireRate;
