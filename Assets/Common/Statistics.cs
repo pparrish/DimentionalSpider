@@ -131,7 +131,7 @@ namespace Common
         private void RemoveFireRateBoost()
         {
             fireRate = fireRate.RemoveMultiplier(_fireRateActiveBoost);
-            _fireRateActiveBoost = new Multiplier(0);
+            _fireRateActiveBoost = new Multiplier(1);
         }
         
         private class StatusChange

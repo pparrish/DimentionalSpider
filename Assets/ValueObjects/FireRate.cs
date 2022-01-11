@@ -37,12 +37,12 @@ namespace ValueObjects
 
         public FireRate GetMultiplier(Multiplier aMultiplier)
         {
-            return new FireRate(aMultiplier + multiplier, shotsPerSecond  );
+            return new FireRate( multiplier + aMultiplier, shotsPerSecond  );
         }
 
         public FireRate RemoveMultiplier(Multiplier aMultiplier)
         {
-            return new FireRate( aMultiplier - multiplier, shotsPerSecond);
+            return new FireRate( multiplier - aMultiplier, shotsPerSecond);
         } 
     }
 }

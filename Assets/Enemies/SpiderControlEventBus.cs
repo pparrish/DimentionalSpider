@@ -32,7 +32,7 @@ namespace Enemies
             vision = aVision;
             statistics = aStatistics;
             
-            var fireBoost = new Boost( aStatistics, new Multiplier(.5f));
+            var fireBoost = new Boost( aStatistics, new Multiplier(2f));
             var fireBoostRemover = fireBoost.GetStatusEffectRemoverPattern();
             
             var patterns = new AttackPatterns() {Controller = this, Vision = SpiderVisionEventBus};
