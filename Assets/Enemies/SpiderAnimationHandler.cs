@@ -6,7 +6,12 @@ namespace Enemies
 {
     public class SpiderAnimationHandler : MonoBehaviour
     {
-        
+        [SerializeField] private StatisticsEventBus statisticsEventBus;
+        public void OnBoostAnimationFinish()
+        {
+            statisticsEventBus.OnBoostAnimationFinish?.Invoke();
+        }
+
         [SerializeField] private SpiderVisionEventBus spiderVisionEventBus;
         [SerializeField] private WeaponEventBus mainWeaponEventBus;
         [SerializeField] private WeaponEventBus supportWeaponEventBus;
@@ -23,6 +28,7 @@ namespace Enemies
         private static readonly int LeftLimit = Animator.StringToHash("LeftLimit");
         private static readonly int RightLimit = Animator.StringToHash("RightLimit");
         private static readonly int DirectionX = Animator.StringToHash("DirectionX");
+        private static readonly int Rage = Animator.StringToHash("Rage");
 
         private void Start()
         {
@@ -30,6 +36,7 @@ namespace Enemies
             mainWeaponEventBus.ONShotStart.AddListener(MainWeaponAttack);
             supportWeaponEventBus.ONShotStart.AddListener(SupportWeaponAttack);
             powerWeaponEventBus.ONShotStart.AddListener(PowerWeaponAttack);
+            statisticsEventBus.OnSetBoost.AddListener(() => _animator.SetTrigger(Rage));
         }
 
         private void LateUpdate()

@@ -10,6 +10,8 @@ namespace AI.Boost
         private string _statusEffectID = "";
         private readonly Boost _addStatusEffect;
         private readonly Boost _removeStatusEffect;
+        private bool _listenerAdded;
+        private bool _statusApplied;
 
         public Boost(ICanTakeStatusEffects statusTaker, Multiplier change)
         {
@@ -27,18 +29,27 @@ namespace AI.Boost
 
         public bool End()
         {
-            if(_addStatusEffect == null) return _statusEffectID != "";
-            return _statusEffectID == "";
+            if(_addStatusEffect == null) return _statusEffectID != "" && _statusApplied;
+            return _statusEffectID == "" ;
         }
 
         public void Reset()
-        {}
+        {
+            _statusApplied = false;
+            _statusEffectID = "";
+        }
 
         public void Execute()
         {
             if (_statusEffectID == "" && _addStatusEffect == null)
             {
                 _statusEffectID = _fireRate.TakeStatusEffect(_change);
+                if (!_listenerAdded)
+                {
+                    _fireRate.OnBoostAnimationFinish.AddListener(() => _statusApplied = true );
+                    _listenerAdded = true;
+                }
+
                 _removeStatusEffect._statusEffectID = _statusEffectID;
             }
             if (_statusEffectID != "" && _addStatusEffect != null)

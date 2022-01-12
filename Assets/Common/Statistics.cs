@@ -3,6 +3,7 @@ using System.Linq;
 using Bullets;
 using GameData;
 using UnityEngine;
+using UnityEngine.Events;
 using ValueObjects;
 using Weapons;
 using Random = UnityEngine.Random;
@@ -28,12 +29,14 @@ namespace Common
         // maybe convert to a statistics event bus
         [SerializeField]
         private StatisticsEventBus statisticsEventBus;
+        public UnityEvent OnBoostAnimationFinish { get; private set; }
 
         private void Start()
         {
             if (statisticsEventBus != null)
             {
                 statisticsEventBus.activeStats = this;
+                OnBoostAnimationFinish = statisticsEventBus.OnBoostAnimationFinish;
             }
         }
 
@@ -172,6 +175,7 @@ namespace Common
         public string TakeStatusEffect(Multiplier change, float duration)
         {
             var id = Time.time + "" + change+ "" + duration;
+            statisticsEventBus.OnSetBoost?.Invoke();
             //Add fireRate boost per statusEffect
             SetFireRateBoost(change);
             _listOfStatusChanges.Add(
